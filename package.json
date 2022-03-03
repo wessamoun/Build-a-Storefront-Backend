@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "eslint **/*.ts",
     "prettier": "npx prettier src/**/*.ts --write && npx prettier build/**/*.js --write",
-    "jasmine": "set ENV=test&& db-migrate --env test up && jasmine && db-migrate --env test down",
-    "test": "npm run build && npm run jasmine",
+    "jasmine": "tsc && set ENV=test&& db-migrate --env test up && jasmine && db-migrate --env test down -c 3",
+    "test": "npm run tsc && npm run jasmine",
     "start": "node src/server.ts",
     "watch": "tsc-watch --noClear --esModuleInterop src/server.ts --outDir ./build --onSuccess \"node ./build/server.js\"",
     "tsc": "tsc"
