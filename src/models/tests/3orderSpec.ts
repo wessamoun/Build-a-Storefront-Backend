@@ -12,27 +12,38 @@ describe("Order model", () => {
   it("should create a new order", async () => {
     const result = await orders.create({
       id: 1,
-      quantity: 2,
-      product_id: "1",
       user_id: "1",
       status: "active",
     });
     expect(result).toEqual({
       id: 1,
-      quantity: 2,
-      product_id: "1",
       user_id: "1",
       status: "active",
     });
   });
-  it("should show user's order", async () => {
-    const result = await orders.show(1);
+  it("should add product to order", async () => {
+    const result = await orders.addProduct({
+      quantity: 20,
+      order_id: "1",
+      product_id: "1",
+    });
     expect(result).toEqual({
       id: 1,
-      quantity: 2,
+      quantity: 20,
+      order_id: "1",
       product_id: "1",
-      user_id: "1",
-      status: "active",
     });
+  });
+  it("should show user's order", async () => {
+    const result = await orders.show(1);
+    expect(result).toEqual([
+      {
+        quantity: 20,
+        order_id: "1",
+        product_id: "1",
+        user_id: "1",
+        status: "active",
+      },
+    ]);
   });
 });
