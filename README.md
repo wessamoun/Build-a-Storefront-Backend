@@ -29,7 +29,7 @@ Architect the database, its tables and columns to fulfill the data requirements 
 - Create a new database. 
 - create env file
 - my env file content:
-- 
+ 
     POSTGRES_HOST=127.0.0.1
     
     POSTGRES_DB=store
