@@ -29,15 +29,25 @@ Architect the database, its tables and columns to fulfill the data requirements 
 - Create a new database. 
 - create env file
 - my env file content:
+- 
     POSTGRES_HOST=127.0.0.1
+    
     POSTGRES_DB=store
+    
     POSTGRES_DB_test=store_test
+    
     POSTGRES_USER=store_user
+    
     POSTGRES_PASSWORD=password123
+    
     ENV=dev
+    
     SALT_ROUNDS=10
+    
     PEPPER=Pstring
+    
     TOKEN_SECRET=secret
+    
 - Create the tables by (db-migrate up).
 - For tests run (npm run jasmine).
 - Use create user endpoint to get a JWT token
