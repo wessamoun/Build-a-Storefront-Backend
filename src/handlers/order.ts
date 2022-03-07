@@ -61,8 +61,8 @@ const addProduct = async (req: express.Request, res: express.Response) => {
 
 const ordersRoute = (app: express.Application) => {
   app.post("/users/:id/orders", create);
-  app.get("/users/:id/orders", show);
   app.post("/users/:id/orders/:orderId/products", addProduct);
+  app.get("/users/:id/orders", show);
 };
 
 export default ordersRoute;

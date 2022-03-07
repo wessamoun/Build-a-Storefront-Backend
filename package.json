@@ -8,7 +8,7 @@
     "prettier": "npx prettier src/**/*.ts --write && npx prettier build/**/*.js --write",
     "jasmine": "tsc && set ENV=test&& db-migrate --env test up && jasmine --random=false && db-migrate --env test down -c 4",
     "test": "npm run tsc && npm run jasmine",
-    "start": "node src/server.ts",
+    "start": "node build/server.js",
     "watch": "tsc-watch --noClear --esModuleInterop src/server.ts --outDir ./build --onSuccess \"node ./build/server.js\"",
     "tsc": "tsc"
   },
